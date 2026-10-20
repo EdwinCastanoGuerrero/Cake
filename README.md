@@ -1,10 +1,14 @@
 # Confeitaria Colômbia
 
-
+Site criado para a Confeitaria Colômbia, mostrando um pouco dos produtos, história e serviços oferecidos.
 
 ## Tecnologias
 
-
+React 19
+Tailwind
+Js
+JavaScript
+Bibliotecas React
 
 ## Desenvolvimento
 
