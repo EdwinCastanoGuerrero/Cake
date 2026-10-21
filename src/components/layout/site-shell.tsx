@@ -43,7 +43,7 @@ export function SiteHeader() {
           <span className="brand-wordmark">
             Confeitaria
             <strong>
-              Colômbia<span className="brand-dot">.</span>
+              Colômbia
             </strong>
           </span>
         </Link>
@@ -85,7 +85,7 @@ export function SiteFooter() {
           <span className="brand-wordmark">
             Confeitaria
             <strong>
-              Colômbia<span className="brand-dot">.</span>
+              Colômbia
             </strong>
           </span>
         </Link>
@@ -104,7 +104,7 @@ export function SiteFooter() {
           © {new Date().getFullYear()} Confeitaria Colômbia. Todos os direitos reservados.
         </span>
         <span className="footer-heart">
-          Feito com carinho <HeartMark />
+          Feito com carinho <HeartMark /> Edwin <ArrowUpRight size={14} />
         </span>
       </div>
     </footer>

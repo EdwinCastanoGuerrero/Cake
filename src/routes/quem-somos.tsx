@@ -1,6 +1,6 @@
 import { ContactBand } from "@/features/contact/contact-band";
 import { usePageMetadata } from "@/lib/page-metadata";
-import background from "@/assets/obleas-background.jpg";
+import background from "@/assets/bunuelos.jpg";
 
 export function AboutPage() {
   usePageMetadata(

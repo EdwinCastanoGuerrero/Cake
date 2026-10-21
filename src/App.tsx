@@ -5,6 +5,9 @@ import { HomePage } from "@/routes/index";
 import { NotFoundPage } from "@/routes/not-found";
 import { ProductsPage } from "@/routes/produtos";
 import { AboutPage } from "@/routes/quem-somos";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export function AppRoutes() {
   return (

@@ -1,11 +1,13 @@
-import { ArrowDown, ArrowRight, Coffee, Heart, Sparkles } from "lucide-react";
+import { ArrowRight, Candy, Coffee, Heart } from "lucide-react";
 import { Link } from "react-router";
 import { Button } from "@/components/ui/button";
 import { ContactBand } from "@/features/contact/contact-band";
 import { FaqSection } from "@/features/faq/faq-section";
 import { ProductCollection } from "@/features/products/product-collection";
 import { usePageMetadata } from "@/lib/page-metadata";
-import background from "@/assets/obleas-background.jpg";
+import carouselData from "@/data/caroouselData.json";
+import { Autoplay, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export function HomePage() {
   usePageMetadata(
@@ -16,27 +18,20 @@ export function HomePage() {
   return (
     <main>
       <section className="home-hero">
-        <img
-          className="hero-background"
-          src={background}
-          alt="Obleas colombianas com recheios sobre uma mesa"
-          fetchPriority="high"
-        />
+        <Swiper modules={[Autoplay, Pagination]} pagination autoplay={{ delay: 3000, disableOnInteraction: false }} fadeEffect={{ crossFade: true }} loop={true}>
+          {carouselData.slides.map((slide) => (
+            <SwiperSlide key={slide.id}>
+              <img
+                className="hero-background"
+                src={slide.src}
+                alt={slide.alt}
+                fetchPriority="high"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
         <div className="hero-wash" />
         <div className="container hero-inner">
-          <div className="eyebrow">
-            <span className="flag-mini">
-              <i />
-              <i />
-              <i />
-            </span>
-            Um pedaço da Colômbia no Brasil
-            <span className="flag-mini">
-              <i />
-              <i />
-              <i />
-            </span>
-          </div>
           <h1>
             Confeitaria
             <br />
@@ -51,11 +46,25 @@ export function HomePage() {
               Conheça nossos produtos <ArrowRight size={18} />
             </Link>
           </Button>
-          <div className="hero-note">
-            <Heart size={15} /> Feito com carinho. Compartilhado com amor.
+
+          <div className="eyebrow">
+
+            Um pedaço da Colômbia no Brasil
+
+          </div>
+          <div className="flags">
+            <div className="flag-brazil">
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
+            <div className="flag-colombia">
+              <i></i>
+              <i></i>
+              <i></i>
+            </div>
           </div>
         </div>
-          {/* <ArrowDown size={17} /> */}
       </section>
 
       <section className="values-strip">
@@ -65,11 +74,11 @@ export function HomePage() {
             <span>Carinho em cada detalhe</span>
           </div>
           <div>
-            <Sparkles />
+            <Coffee />
             <span>A essência dos sabores colombianos</span>
           </div>
           <div>
-            <Coffee />
+            <Candy />
             <span>Para adoçar seus momentos</span>
           </div>
         </div>
@@ -85,9 +94,7 @@ export function HomePage() {
             </h2>
           </div>
           <div className="col-md-6">
-            <p>
-              Que tal conhecer um pouco de nossa história?
-            </p>
+            <p>Que tal conhecer um pouco de nossa história?</p>
             <Button variant="link" asChild>
               <Link to="/quem-somos">
                 Conheça a nossa história <ArrowRight />

@@ -1,0 +1,19 @@
+{
+    "slides": [
+        {   
+            "id": 1,
+            "src":"src/assets/bunuelos.jpg",
+            "alt":"bunuelos"
+        },
+        {
+            "id": 2,
+            "src":"src/assets/obleas-background.jpg",
+            "alt":"obleas"
+        },
+        {
+            "id": 3,
+            "src":"src/assets/alfajores.jpg",
+            "alt":"alfajores"
+        }
+    ]
+}
